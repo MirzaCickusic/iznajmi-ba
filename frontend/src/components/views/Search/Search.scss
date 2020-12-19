@@ -1,0 +1,21 @@
+.search-view {
+  margin: 1rem;
+  padding: 1rem;
+  display: grid;
+  grid-template-rows: 1fr 9fr;
+  .search-info {
+    display: flex;
+    max-width: 40%;
+    justify-content: space-between;
+
+  }
+
+  .search-results{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    //background-color: #A6ADB4;
+  }
+}
+
+

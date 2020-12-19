@@ -1,0 +1,260 @@
+$fontColor: #202124;
+
+
+.product-view-container {
+  margin: 1rem 1.5rem;
+}
+
+
+.product-images-info-reservation-user-location {
+  min-height: 60vh;
+  max-height: 60vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.2fr 0.4fr 1fr 1.7fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 8px 8px;
+  grid-template-areas:
+    "images images images info info user"
+    "images images images info info user"
+    "images images images info info location"
+    "images images images reservation reservation location"
+    "images images images reservation reservation location"
+    "images images images reservation reservation location";
+
+  .images {
+    grid-area: images;
+    width: 100%;
+    object-fit: contain;
+    overflow: hidden;
+    box-shadow: 3px 2px 10px rgba(0, 0, 0, 0.15), -3px 5px 5px rgba(0, 0, 0, 0.15);
+
+  }
+
+  .info {
+    grid-area: info;
+    padding: 16px;
+    color: $fontColor;
+    box-shadow: 3px 2px 10px rgba(0, 0, 0, 0.15), -3px 5px 5px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    display: grid;
+    background-color: #FFFFFF;
+
+    h1 {
+      font-size: 26px;
+    }
+
+    h2 {
+      font-size: 16px;
+    }
+
+    h3 {
+      margin: 0.5rem 0;
+      font-size: 16px;
+
+      i {
+        margin-right: 0.5rem;
+      }
+    }
+
+    p {
+      padding: 8px;
+      margin: 0.5rem 3rem 0.2rem;
+      text-align: center;
+      font-weight: bold;
+      border: 2px solid #FA6980;
+      border-radius: 8px;
+      color: #FA6980;
+    }
+
+    button {
+      display: inline-block;
+      margin: 0.5rem 3rem;
+      background-color: #FA6980;
+      border-radius: 6px;
+      padding: 8px;
+      color: #FFFFFF;
+      font-weight: bold;
+      border: none;
+    }
+  }
+
+  .reservation {
+    grid-area: reservation;
+    padding: 16px;
+    text-align: center;
+    color: $fontColor;
+    font-weight: bold;
+    background-color: #FFFFFF;
+    box-shadow: 3px 2px 10px rgba(0, 0, 0, 0.15), -3px 5px 5px rgba(0, 0, 0, 0.15);
+
+
+    .date-day {
+      display: flex;
+      height: 50%;
+      justify-content: center;
+
+      .date-picker {
+        display: grid;
+        align-items: center;
+
+        p {
+          margin: 0.5rem;
+        }
+
+        input {
+          margin: 0.5rem;
+        }
+      }
+
+      .day-picker {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+
+        grid-template-areas:
+                't t'
+                'i d';
+
+        justify-items: center;
+        align-items: center;
+
+        input {
+          padding: 0.5rem;
+          width: 1rem;
+          grid-area: i;
+
+        }
+
+        .text {
+          padding: 1rem;
+
+          grid-area: t;
+        }
+
+        .days {
+          padding: 1rem;
+
+          grid-area: d;
+
+        }
+      }
+    }
+
+    h2 {
+      margin: 0;
+    }
+
+    button {
+      display: inline-block;
+      margin: 0.5rem 3rem;
+      background-color: #FA6980;
+      border-radius: 6px;
+      padding: 16px 8px;
+      color: #FFFFFF;
+      font-weight: bold;
+      border: none;
+    }
+
+  }
+
+  .user {
+    grid-area: user;
+    display: grid;
+    grid-template-columns: 0.3fr 0.7fr;
+    grid-gap: 2rem;
+    color: $fontColor;
+    box-shadow: 3px 2px 10px rgba(0, 0, 0, 0.15), -3px 5px 5px rgba(0, 0, 0, 0.15);
+
+    align-items: center;
+
+    img {
+      max-width: 100%;
+      margin: 1rem;
+    }
+
+    .user-info {
+      text-align: left;
+      max-height: 100%;
+      width: 100%;
+      display: grid;
+      grid-template-rows: 1fr 1fr 1fr;
+
+
+      p {
+        color: #FA6980;
+        font-weight: bold;
+      }
+    }
+
+
+    background-color: #FFFFFF;
+
+  }
+
+  .location {
+    grid-area: location;
+    background-color: #FFFFFF;
+    box-shadow: 3px 2px 10px rgba(0, 0, 0, 0.15), -3px 5px 5px rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.description-reviews {
+  max-width: 100%;
+  height: 50%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  .description {
+    margin: 1rem;
+
+    p {
+      margin: 1rem 0;
+      padding-right: 10%;
+      display: block;
+
+    }
+  }
+
+  .reviews {
+    max-width: 100%;
+    max-height: 30%;
+
+    overflow: auto;
+
+    h1 {
+      margin: 1rem;
+    }
+
+    .single-review {
+      margin: 1rem;
+      padding-top: 1rem;
+      max-height: 40%;
+      display: grid;
+      grid-template-rows: 20% 80%;
+
+      .image-name-stars {
+        display: flex;
+        align-items: center;
+
+        img {
+          max-height: 100%;
+          margin: 0 1rem;
+
+        }
+
+        h3 {
+          margin: 0 1rem 0 0;
+        }
+      }
+
+      .description {
+        margin: 0;
+        padding: 1rem;
+        max-height: 100%;
+      }
+    }
+  }
+}
