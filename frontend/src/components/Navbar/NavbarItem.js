@@ -8,6 +8,7 @@ const NavbarItem = ({index, className, url, title, link}) => {
                 {title}
             </a>
         </li>
+
     );
 };
 
