@@ -9,9 +9,14 @@
   "author": "M.Č.",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^2.0.6"
+    "nodemon": "^2.0.6",
+    "cross-env": "^7.0.2"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "dotenv": "^8.2.0",
+    "mongoose": "^5.10.15",
+    "cors": "^2.8.5",
+    "mongoose-unique-validator": "^2.0.3"
   }
 }
