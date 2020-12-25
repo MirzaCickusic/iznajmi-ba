@@ -1,15 +1,9 @@
 const mongoose = require('mongoose')
 
 const reviewSchema = mongoose.Schema({
-    product_id:{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Product'
-    },
+    product_reviewed_id: String,
     review_text: String,
-    submitted_by: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
-    },
+    submitted_by_user_id: String,
     submitted_at: String,
     rating_given: Number
 })

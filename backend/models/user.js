@@ -7,7 +7,10 @@ const userSchema = mongoose.Schema({
         type: String,
         unique: true
     },
-    email: String,
+    email: {
+        type: String,
+        unique: true
+    },
     passwordHash: String,
     city: String,
     canton: String,
@@ -16,23 +19,15 @@ const userSchema = mongoose.Schema({
         type: String,
         unique: true
     },
-    review_count: Number,
-    review_value: Number,
+    review_count: {type: Number, default: 0},
+    review_value: {type: Number, default: 0},
     address: {
         street: String,
         location: {
             lat: Number,
             long: Number
         }
-    },
-    reviews: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Review'
-    }],
-    products: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Product'
-    }],
+    }
 })
 
 userSchema.set('toJSON', {
@@ -48,4 +43,4 @@ userSchema.plugin(uniqueValidator)
 
 const User = mongoose.model('User', userSchema)
 
-module.export = User
+module.exports = User

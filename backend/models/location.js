@@ -5,6 +5,8 @@ const locationSchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Product'
     },
+    //ako tačna lokacija nije učitana, uzimamo long i lat od opštine ili grada
+    municipality: String,
     exact_location: {
         lat: Number,
         long: Number

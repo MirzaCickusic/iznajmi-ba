@@ -1,14 +1,19 @@
 const mongoose = require('mongoose')
 
 const productSchema = mongoose.Schema({
-    category_ids: {
+    category_ids: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Category'
-    },
-    product_display_name: String,
-    product_short_description: String,
-    product_long_description: String,
-    product_location: {
+    }],
+    published_by_user: String,
+    display_name: String,
+    short_description: String,
+    long_description: String,
+    reviews_ids:[{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Review'
+    }],
+    location: {
         street: String,
         // postal_number: Number,
         canton: String,
@@ -18,16 +23,12 @@ const productSchema = mongoose.Schema({
             long: Number
         }
     },
-    product_price: {
-        pricing_type: String,
+    pricing: {
+        type: String,
         price: Number
     },
-    review_ids: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Review'
-    }],
     is_active: Boolean,
-    product_images: [{
+    images: [{
         image_url: String
     }]
 })
