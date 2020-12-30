@@ -10,6 +10,19 @@ const Modal = styled.div`
   display: ${props => props.active ? 'block' : 'none'};
 `
 
+const CenterContainer = styled.div`
+  position: fixed;
+  background: #FFFFFF;
+  box-shadow: 3px 2px 10px rgba(0, 0, 0, 0.15), -3px 5px 5px rgba(0, 0, 0, 0.15);
+  width: 40%;
+  max-height: 60%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-content: center;
+`
+
 const CloseButton = styled.button`
   position: fixed;
   top: 0;
@@ -67,4 +80,4 @@ const Checkbox = styled.input`
 `
 
 
-export {Modal, CloseButton, Checkbox}
+export {Modal, CloseButton, Checkbox, CenterContainer}

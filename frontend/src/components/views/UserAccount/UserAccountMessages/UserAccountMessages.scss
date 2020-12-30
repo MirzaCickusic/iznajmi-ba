@@ -1,0 +1,35 @@
+.messages-view {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+
+  .messages-menu {
+    border-bottom: 2px solid #c4c4c4;
+    max-height: 150px;
+    ul {
+      display: flex;
+      flex-direction: column;
+
+      li {
+        list-style-type: none;
+        padding: 0.5rem 1.5rem;
+        font-weight: bold;
+        color: #616365;
+
+        &:hover {
+          user-select: none;
+        }
+
+        span{
+          float: right;
+        }
+      }
+    }
+  }
+
+  .messages-display {
+    border: 2px solid #CFD1D2;
+    border-top: none;
+  }
+}

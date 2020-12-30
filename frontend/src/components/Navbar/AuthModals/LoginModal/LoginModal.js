@@ -3,7 +3,7 @@ import {CloseButton, Modal} from "../RegisterModal/RegisterModalStyles";
 import '../RegisterModal/RegisterModal.scss'
 import styled from 'styled-components'
 
-const ErrorMessage = styled.div`
+export const ErrorMessage = styled.div`
     color: red;
     font-size: 1rem;
     font-weight: bold;
@@ -14,8 +14,7 @@ const LoginModal = ({
                         handleSubmit,
                         setPassword,
                         setUsernameOrEmail,
-                        errorMessageLogin,
-                        setErrorMessageLogin
+                        errorMessageLogin
                     }) => {
 
     const [errorText, setErrorText] = useState('')

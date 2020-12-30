@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import {CloseButton, Modal} from "../RegisterModal/RegisterModalStyles";
 import styled from 'styled-components'
+import {ErrorMessage} from "../LoginModal/LoginModal";
 
 const RegisterContainer = styled.div`
   text-align: center;
@@ -13,7 +14,8 @@ const LoginOrRegisterModalCombined = ({
                                           setIsRegisterModalOpened,
                                           handleSubmit,
                                           setPassword,
-                                          setUsernameOrEmail
+                                          setUsernameOrEmail,
+                                          errorMessageLogin
                                       }) => {
 
     useEffect(() => {
@@ -41,8 +43,11 @@ const LoginOrRegisterModalCombined = ({
                 <h2>PRIJAVA</h2>
                 <form onSubmit={handleSubmit}>
                     <h4>Da biste objavili oglas, morate se prvo prijaviti!</h4>
-                    <input type="email" placeholder="Korisničko ime ili email adresa" onChange={e => setUsernameOrEmail(e.target.value)}/>
-                    <input type="password" placeholder="Lozinka" onChange={e => setPassword(e.target.value)}/>
+                    <ErrorMessage>{errorMessageLogin}</ErrorMessage>
+                    <input type="email" placeholder="Korisničko ime ili email adresa"
+                           onChange={e => setUsernameOrEmail(e.target.value)}/>
+                    <input type="password" placeholder="Lozinka"
+                           onChange={e => setPassword(e.target.value)}/>
                 </form>
                 <button className="submit-btn" onClick={handleSubmit}>ULOGUJ SE</button>
                 <RegisterContainer>

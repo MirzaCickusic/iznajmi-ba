@@ -15,7 +15,7 @@ const HeroSearchForm = () => {
     const [formValid, setFormValid] = useState(false)
 
     const handleSubmit = (e) => {
-        //TODO Potreban dupli enter/button da bi submito formu
+        //TODO Potreban dupli enter/button klik da bi submito formu poslije errora
         e.preventDefault()
         setFormValid(true)
 

@@ -17,7 +17,7 @@ const userSchema = mongoose.Schema({
     registration_date: Date,
     telephone: {
         type: String,
-        unique: true
+        index: { unique: true, sparse: true }
     },
     review_count: {type: Number, default: 0},
     review_value: {type: Number, default: 0},
@@ -28,6 +28,7 @@ const userSchema = mongoose.Schema({
             long: Number
         }
     }
+    //TODO How to store messages in mongo
 })
 
 userSchema.set('toJSON', {

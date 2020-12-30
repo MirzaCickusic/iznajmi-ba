@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {GuestUserMenuItems, LoggedUserMenuItems} from "./NavbarItems"
 import {Button} from "../sharedComponents/Button/Button"
 import './Navbar.scss'
-import {Link} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 import NavbarItem from "./NavbarItem";
 import RegisterModal from "./AuthModals/RegisterModal/RegisterModal";
 import LoginModal from "./AuthModals/LoginModal/LoginModal";
@@ -35,12 +35,15 @@ const Navbar = () => {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
-    useEffect(() => {
+    let history = useHistory()
+
+    useEffect(() => { //Check if user is already logged
         const loggedUserJSON = window.localStorage.getItem('loggedIznajmiBaUser')
         if (loggedUserJSON) {
             const user = JSON.parse(loggedUserJSON)
-            setUser(user)
-            // noteService.setToken(user.token) TODO Implementirati postavljanje tokena
+            setUser(user) //TODO Dodati usera u global state, renderati navigaciju za
+            // registriranog usera i postaviti token
+            // noteService.setToken(user.token)
         }
     }, [])
 
@@ -67,14 +70,17 @@ const Navbar = () => {
             })
 
             window.localStorage.setItem(
-                'loggedNoteAppUser', JSON.stringify(user))
+                'loggedAppUser', JSON.stringify(user))
 
             loginService.setToken(user.token)
             setUser(user)
+            //TODO Pri logovanju dodati usera u GLOBAL state
             setUsername('')
             setPassword('')
             setIsLoginModalOpened(!isLoginModalOpened)
             setErrorMessageLogin('')
+
+            history.push(`/dashboard/${user.username}`)
         } catch (exception) {
             // setErrorMessage('wrong credentials')
             // setTimeout(() => {
@@ -174,6 +180,8 @@ const Navbar = () => {
                 handleSubmit={handleLogin}
                 setUsernameOrEmail={setUsername}
                 setPassword={setPassword}
+                errorMessageLogin={errorMessageLogin}
+                setErrorMessageLogin={setErrorMessageLogin}
             />
         </>
     )

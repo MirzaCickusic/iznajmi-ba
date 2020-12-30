@@ -22,10 +22,7 @@ usersRouter.post('/', async (request, response) => {
         email: body.email,
         passwordHash: passwordHash,
         city: body.city,
-        canton: body.canton,
-        registration_date: new Date,
-        telephone: body.telephone,
-        address: body.address
+        registration_date: new Date
     })
 
     const savedUser = await user.save()
@@ -38,6 +35,16 @@ usersRouter.get('/:id', async (request, response) => {
     const user = await User.findById(request.params.id)
     if (user) {
         response.json(user.toJSON())
+    } else {
+        response.status(404).end()
+    }
+})
+
+usersRouter.get('/messages/:id', async (request,response) => {
+    const userMessages = await User.findById(request.params.id).messages
+
+    if (userMessages) {
+        response.json(userMessages.toJSON())
     } else {
         response.status(404).end()
     }

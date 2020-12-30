@@ -7,7 +7,7 @@ import Footer from "./components/views/HomePage/Footer/Footer";
 import SingleProductView from "./components/views/SingleProductView/SingleProductView";
 import UserProfile from "./components/views/UserProfile/UserProfile";
 import Search from "./components/views/Search/Search";
-import SignUp from "./components/views/SignUp/SignUp";
+import UserAccount from "./components/views/UserAccount/UserAccount";
 
 function App() {
 
@@ -18,11 +18,11 @@ function App() {
                 <Route exact path="/" component={HomePage}/>
                 <Route path="/search" component={Search}/>
                 <Route path="/about" component={About}/>
-                <Route path="/product/12345" component={SingleProductView}/>
+                <Route path="/product/:productId" component={SingleProductView}/>
+                <Route path="/category/:categoryName" component={Search}/>
                 {/*TODO Kako da link ne ostavlja prijašnji path*/}
-                <Route path="/product/rokiboy" component={UserProfile}/>
-                <Route path="/messages" component={Messages}/>
-                <Route path="/register" component={SignUp}/>
+                <Route path="/user/:username" component={UserProfile}/>
+                <Route path="/dashboard/:username" component={UserAccount}/>
             </div>
             {/*TODO Footer treba da se pokaže na dnu stranice*/}
             {/*<Footer/>*/}
@@ -33,10 +33,6 @@ function App() {
 
 function About() {
     return <h1>O nama</h1>
-}
-
-function Messages() {
-    return <h1>Poruke</h1>
 }
 
 

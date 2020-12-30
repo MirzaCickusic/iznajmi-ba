@@ -2,6 +2,7 @@ import React from 'react';
 import {DummyCategories} from "./DummyCategories";
 import './TopCategories.scss'
 import styled from 'styled-components'
+import CircleCategory from "./CircleCategory";
 
 const TopCategoriesContainer = styled.div`
     h2{
@@ -13,11 +14,10 @@ const TopCategoriesContainer = styled.div`
 
 const CircleItemGrid = styled.div`
     list-style: none;
-    height: 90%;
     width: 100%;
     display: grid;
     grid-template-rows: repeat(auto-fill, 180px);
-    grid-template-columns: repeat(auto-fill, 180px);
+    grid-template-columns: repeat(auto-fill, 14.28%);
     justify-content: space-between;
 
     align-items: center;
@@ -25,20 +25,21 @@ const CircleItemGrid = styled.div`
 `
 
 const TopCategories = () => {
+
+    //TODO Povući ikonu i naziv 14 kategorija sa najviše artikala
+
     return (
         <TopCategoriesContainer>
             <h2>NAJPOPULARNIJE KATEGORIJE</h2>
             <CircleItemGrid>
                 {DummyCategories.map((item, index) => {
-                    //TODO Kreirati komponentu koja će predstavljati zasebnu kategoriju u gridu
                     return (
-                        <div key={index} className={item.className}>
-                            <div className="icon-text">
-                                <a href={item.link}><i
-                                    className={item.icon}></i></a>
-                                <span>{item.name}</span>
-                            </div>
-                        </div>
+                        <CircleCategory
+                            index={index}
+                            className={item.className}
+                            link={item.link}
+                            icon={item.icon}
+                            name={item.name}/>
                     )
                 })}
             </CircleItemGrid>
