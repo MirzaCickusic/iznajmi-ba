@@ -1,6 +1,7 @@
 const bcrypt = require('bcrypt')
 const usersRouter = require('express').Router()
 const User = require('../models/user')
+const jwt = require('jsonwebtoken')
 
 //Get all users
 usersRouter.get('/', async (request, response) => {
@@ -25,9 +26,19 @@ usersRouter.post('/', async (request, response) => {
         registration_date: new Date
     })
 
-    const savedUser = await user.save()
+    // const savedUser = await user.save()
 
-    response.json(savedUser)
+    const userForToken = {
+        username: user.username,
+        id: user._id,
+    }
+
+    const token = jwt.sign(userForToken, process.env.SECRET)
+
+    response
+        .status(200)
+        .send({token, username: user.username, name: user.name, email: user.email, id:user.id})
+
 })
 
 //Get specific user
@@ -40,7 +51,7 @@ usersRouter.get('/:id', async (request, response) => {
     }
 })
 
-usersRouter.get('/messages/:id', async (request,response) => {
+usersRouter.get('/messages/:id', async (request, response) => {
     const userMessages = await User.findById(request.params.id).messages
 
     if (userMessages) {

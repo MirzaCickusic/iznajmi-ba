@@ -1,9 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {useHistory, useParams} from 'react-router-dom'
 import './RegisterModal.scss'
 import {Modal, CloseButton, Checkbox} from "./RegisterModalStyles";
 import registerService from '../../../../services/register'
 import loginService from "../../../../services/login";
+import {UserContext} from "../../../../state/userState";
 
 const RegisterModal = ({isRegisterModalOpened, setIsRegisterModalOpened}) => {
 
@@ -14,6 +15,8 @@ const RegisterModal = ({isRegisterModalOpened, setIsRegisterModalOpened}) => {
         password: '',
         city: ''
     })
+
+    const [user, setUser] = useContext(UserContext)
 
     let history = useHistory()
     const { username } = useParams()
@@ -44,7 +47,7 @@ const RegisterModal = ({isRegisterModalOpened, setIsRegisterModalOpened}) => {
                 'loggedAppUser', JSON.stringify(user))
 
             loginService.setToken(user.token)
-            // setUser(user)
+            setUser(user)
             closeModal()
             history.push(`/dashboard/${user.username}`)
 

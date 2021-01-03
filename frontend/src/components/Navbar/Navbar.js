@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {GuestUserMenuItems, LoggedUserMenuItems} from "./NavbarItems"
 import {Button} from "../sharedComponents/Button/Button"
 import './Navbar.scss'
@@ -10,6 +10,7 @@ import LoginOrRegisterModalCombined
     from "./AuthModals/LoginOrRegisterModalCombined/LoginOrRegisterModalCombined";
 import loginService from '../../services/login'
 import styled from 'styled-components'
+import {UserContext} from "../../state/userState";
 
 const AvatarImage = styled.div`
     max-height: 100%;
@@ -27,7 +28,6 @@ const AvatarImage = styled.div`
 `
 const Navbar = () => {
     const [navMenuMobileClicked, setNavMenuMobileClicked] = useState(false)
-    const [user, setUser] = useState(null)
     const [isRegisterModalOpened, setIsRegisterModalOpened] = useState(false)
     const [isLoginModalOpened, setIsLoginModalOpened] = useState(false)
     const [errorMessageLogin, setErrorMessageLogin] = useState()
@@ -35,17 +35,9 @@ const Navbar = () => {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
-    let history = useHistory()
+    const [user, setUser] = useContext(UserContext)
 
-    useEffect(() => { //Check if user is already logged
-        const loggedUserJSON = window.localStorage.getItem('loggedIznajmiBaUser')
-        if (loggedUserJSON) {
-            const user = JSON.parse(loggedUserJSON)
-            setUser(user) //TODO Dodati usera u global state, renderati navigaciju za
-            // registriranog usera i postaviti token
-            // noteService.setToken(user.token)
-        }
-    }, [])
+    let history = useHistory()
 
     const handleClick = () => {
         setNavMenuMobileClicked(!navMenuMobileClicked)
@@ -74,7 +66,7 @@ const Navbar = () => {
 
             loginService.setToken(user.token)
             setUser(user)
-            //TODO Pri logovanju dodati usera u GLOBAL state
+
             setUsername('')
             setPassword('')
             setIsLoginModalOpened(!isLoginModalOpened)

@@ -1,10 +1,17 @@
 import axios from "axios";
 
-const baseUrl = 'http://localhost:3001/api/users/messages'
+const messagesRoute = 'http://localhost:3001/api/users/messages'
 
-const getUserMessages = async userID => {
-    const response = await axios.get(baseUrl, userID)
+const getUserMessages = async userId => {
+    const response = await axios.get(messagesRoute, userId)
     return response.data
 }
 
-export default {getUserMessages}
+const userDataRoute = 'http://localhost:3001/api/users'
+
+const getUserById = async userId => {
+    const response = await axios.get(userDataRoute, userId)
+    return response.data
+}
+
+export default {getUserMessages, getUserById}

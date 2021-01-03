@@ -8,12 +8,15 @@ import SingleProductView from "./components/views/SingleProductView/SingleProduc
 import UserProfile from "./components/views/UserProfile/UserProfile";
 import Search from "./components/views/Search/Search";
 import UserAccount from "./components/views/UserAccount/UserAccount";
+import {UserProvider} from "./state/userState";
 
 function App() {
 
     return (
         <Router>
-            <Navbar/>
+            <UserProvider>
+                <Navbar/>
+            </UserProvider>
             <div className="App">
                 <Route exact path="/" component={HomePage}/>
                 <Route path="/search" component={Search}/>
