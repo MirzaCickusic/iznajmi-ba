@@ -1,11 +1,24 @@
 .item-circle {
-    width: 150px;
-    height: 150px;
+    min-width: 90%;
+    min-height: 90%;
+    margin: 0 0;
     background-color: #A6ADB4;
     border-radius: 50%;
     display: grid;
     align-items: center;
     justify-items: center;
+
+    overflow: hidden;
+    text-align: center;
+
+    img{
+        min-width: 100%;
+        min-height: 100%;
+    }
+
+    span{
+        max-width: 99%;
+    }
 }
 
 .icon-text {
@@ -13,10 +26,11 @@
     grid-template-rows: 0.9fr 0.1fr;
     align-items: center;
     justify-items: center;
+    font-weight: bold;
+    color: #585A5C;
+    word-wrap: break-word;
 
-    i {
-        color: #525252;
-    }
+
 }
 
 .button-view-all-categories {

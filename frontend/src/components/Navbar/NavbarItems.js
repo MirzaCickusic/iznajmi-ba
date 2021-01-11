@@ -1,7 +1,7 @@
 export const GuestUserMenuItems = [
     {
         title: 'PRETRAGA',
-        url: '/search',
+        url: '/pretraga',
         className: 'nav-links',
         link: true
     },
@@ -19,7 +19,7 @@ export const GuestUserMenuItems = [
     },
     {
         title: 'ŠTA JE IZNAJMI.BA?',
-        url: '/about',
+        url: '/o-nama',
         className: 'nav-links',
         link: true
     }
@@ -28,12 +28,12 @@ export const GuestUserMenuItems = [
 export const LoggedUserMenuItems = [
     {
         title: 'PRETRAGA',
-        url: '/search',
+        url: '/pretraga',
         className: 'nav-links'
     },
     {
         title: 'ŠTA JE IZNAJMI.BA?',
-        url: '/about',
+        url: '/o-nama',
         className: 'nav-links'
     },
     {

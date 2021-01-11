@@ -1,5 +1,4 @@
 import React, {createContext, useEffect, useState} from 'react'
-import axios from "axios";
 import userService from '../services/user'
 
 export const UserContext = createContext()

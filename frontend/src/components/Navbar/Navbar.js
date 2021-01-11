@@ -86,7 +86,7 @@ const Navbar = () => {
         return (
             <>
                 <li>
-                    <a className="nav-links" href={"/search"}>
+                    <a className="nav-links" href={"/pretraga"}>
                         PRETRAGA
                     </a>
                 </li>
@@ -101,7 +101,7 @@ const Navbar = () => {
                     </a>
                 </li>
                 <li>
-                    <a className="nav-links" href={"/about"}>
+                    <a className="nav-links" href={"/o-nama"}>
                         ŠTA JE IZNAJMI.BA?
                     </a>
                 </li>
@@ -113,12 +113,12 @@ const Navbar = () => {
         return (
             <>
                 <li>
-                    <a className="nav-links" href={"/search"}>
+                    <a className="nav-links" href={"/pretraga"}>
                         PRETRAGA
                     </a>
                 </li>
                 <li>
-                    <a className="nav-links" href={"/about"}>
+                    <a className="nav-links" href={"/o-nama"}>
                         ŠTA JE IZNAJMI.BA?
                     </a>
                 </li>

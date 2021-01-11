@@ -1,0 +1,29 @@
+.step-one {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  .input-fields {
+
+
+    form {
+      display: flex;
+      flex-direction: column;
+      margin: 0 1rem;
+
+      input {
+        margin: 1rem 0;
+        padding: 0.5rem;
+        background-color: #FFFFFF;
+        color: #ADB3BA;
+        border-radius: 6px;
+        border: 1px solid #EBEDED;
+      }
+
+      input:first-of-type {
+        margin-bottom: 0;
+      }
+
+    }
+
+  }
+}

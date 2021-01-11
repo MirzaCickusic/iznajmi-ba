@@ -1,0 +1,18 @@
+.empty-category{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1ch;
+
+  img{
+    margin: 3rem 0 2rem;
+  }
+
+  h1{
+    margin: 1rem;
+    color: #4B4C4F;
+  }
+}

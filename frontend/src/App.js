@@ -5,10 +5,12 @@ import {BrowserRouter as Router, Route} from "react-router-dom";
 import HomePage from "./components/views/HomePage/HomePage";
 import Footer from "./components/views/HomePage/Footer/Footer";
 import SingleProductView from "./components/views/SingleProductView/SingleProductView";
-import UserProfile from "./components/views/UserProfile/UserProfile";
 import Search from "./components/views/Search/Search";
 import UserAccount from "./components/views/UserAccount/UserAccount";
 import {UserProvider} from "./state/userState";
+import CategoryResults from "./components/views/CategoryResults/CategoryResults";
+import Profile from "./components/views/UserProfile/UserProfile";
+import StepOne from "./components/views/ProductPublishingProcess/StepOne";
 
 function App() {
 
@@ -19,13 +21,14 @@ function App() {
             </UserProvider>
             <div className="App">
                 <Route exact path="/" component={HomePage}/>
-                <Route path="/search" component={Search}/>
-                <Route path="/about" component={About}/>
-                <Route path="/product/:productId" component={SingleProductView}/>
-                <Route path="/category/:categoryName" component={Search}/>
+                <Route path="/pretraga" component={Search}/>
+                <Route path="/o-nama" component={About}/>
+                <Route path="/proizvod/:productId" component={SingleProductView}/>
+                <Route path="/kategorija/:categoryName" component={CategoryResults}/>
                 {/*TODO Kako da link ne ostavlja prijašnji path*/}
-                <Route path="/user/:username" component={UserProfile}/>
-                <Route path="/dashboard/:username" component={UserAccount}/>
+                <Route path="/korisnik/:username" component={Profile}/>
+                <Route path="/profil/:username" component={UserAccount}/>
+                <Route path="/kreiranje-proizvoda" component={StepOne}/>
             </div>
             {/*TODO Footer treba da se pokaže na dnu stranice*/}
             {/*<Footer/>*/}

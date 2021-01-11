@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components'
 import './Search.scss'
 
@@ -23,7 +23,7 @@ const Search = () => {
                 <Input type="text" placeholder=" Cijena"/>
             </div>
             <div className="search-results">
-                <h1>PROIZVODI</h1>
+                <h1>REZULTAT PRETRAŽIVANJA</h1>
             </div>
         </div>
     );

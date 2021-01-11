@@ -6,17 +6,16 @@ import CircleCategory from "./CircleCategory";
 
 const TopCategoriesContainer = styled.div`
     h2{
-    padding-top: 32px;
-    margin: 0;
-    text-align: left;
+    margin: 1rem 0;
     }
 `
 
 const CircleItemGrid = styled.div`
     list-style: none;
+    min-height: 40vh;
     width: 100%;
     display: grid;
-    grid-template-rows: repeat(auto-fill, 180px);
+    grid-template-rows: repeat(auto-fill, 50%);
     grid-template-columns: repeat(auto-fill, 14.28%);
     justify-content: space-between;
 
@@ -38,7 +37,7 @@ const TopCategories = () => {
                             index={index}
                             className={item.className}
                             link={item.link}
-                            icon={item.icon}
+                            image={item.image}
                             name={item.name}/>
                     )
                 })}

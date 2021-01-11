@@ -2,7 +2,11 @@ const mongoose = require('mongoose')
 
 const categorySchema = mongoose.Schema({
     name: String,
-    icon: String
+    icon: String,
+    products: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Product'
+    }],
 })
 
 categorySchema.set('toJSON', {

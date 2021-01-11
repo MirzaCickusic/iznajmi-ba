@@ -1,87 +1,126 @@
+import car from '../../../../assets/categoriesIcons/car.png'
+import van from '../../../../assets/categoriesIcons/van.png'
+import apartment from '../../../../assets/categoriesIcons/apartment.png'
+import machinesTools from '../../../../assets/categoriesIcons/machines-tools.png'
+import console from '../../../../assets/categoriesIcons/console.png'
+import garage from '../../../../assets/categoriesIcons/garage.png'
+import motorbike from '../../../../assets/categoriesIcons/motorbike.png'
+import cake from '../../../../assets/categoriesIcons/cake.png'
+import office from '../../../../assets/categoriesIcons/office.png'
+import speaker from '../../../../assets/categoriesIcons/speaker.png'
+import camper from '../../../../assets/categoriesIcons/camper.png'
+import dress from '../../../../assets/categoriesIcons/dress.png'
+import tennis from '../../../../assets/categoriesIcons/tennis.png'
+import nautical from '../../../../assets/categoriesIcons/nautical.png'
+
 export const DummyCategories = [
     {
         name: 'AUTA',
         icon: 'fas fa-car fa-4x',
         className: 'item-circle',
-        link: '#'
+        link: '/kategorija/auta',
+        image: car
     },
     {
-        name: 'AUTA',
+        name: 'KOMBIJI',
         icon: 'fas fa-car fa-4x',
         className: 'item-circle',
-        link: '#'
+        link: '/kategorija/kombiji',
+        image: van
     },
     {
-        name: 'AUTA',
+        name: 'STANOVI',
         icon: 'fas fa-car fa-4x',
         className: 'item-circle',
-        link: '#'
+        link: '/kategorija/stanovi',
+        image: apartment
+
     },
     {
-        name: 'AUTA',
+        name: 'MAŠINE I ALATI',
         icon: 'fas fa-car fa-4x',
         className: 'item-circle',
-        link: '#'
+        link: '/kategorija/masine-alati',
+        image: machinesTools
+
     },
     {
-        name: 'AUTA',
+        name: 'KONZOLE',
         icon: 'fas fa-car fa-4x',
         className: 'item-circle',
-        link: '#'
+        link: '/kategorija/konzole',
+        image: console
+
     },
     {
-        name: 'AUTA',
+        name: 'GARAŽE',
         icon: 'fas fa-car fa-4x',
         className: 'item-circle',
-        link: '#'
+        link: '/kategorija/garaze',
+        image: garage
+
     },
     {
-        name: 'AUTA',
+        name: 'REKREATIVNA VOZILA',
         icon: 'fas fa-car fa-4x',
         className: 'item-circle',
-        link: '#'
+        link: '/kategorija/rekreativna-vozila',
+        image: motorbike
+
     },
     {
-        name: 'AUTA',
+        name: 'SVADBENI SALONI',
         icon: 'fas fa-car fa-4x',
         className: 'item-circle',
-        link: '#'
+        link: '/kategorija/svadbeni-saloni',
+        image: cake
+
     },
     {
-        name: 'AUTA',
+        name: 'POSLOVNI PROSTORI',
         icon: 'fas fa-car fa-4x',
         className: 'item-circle',
-        link: '#'
+        link: '/kategorija/poslovni-prostori',
+        image: office
+
     },
     {
-        name: 'AUTA',
+        name: 'UREĐAJI',
         icon: 'fas fa-car fa-4x',
         className: 'item-circle',
-        link: '#'
+        link: '/kategorija/uredjaji',
+        image: speaker
+
     },
     {
-        name: 'AUTA',
+        name: 'KAMPERI',
         icon: 'fas fa-car fa-4x',
         className: 'item-circle',
-        link: '#'
+        link: '/kategorija/kamperi',
+        image: camper
+
     },
     {
-        name: 'AUTA',
+        name: 'HALJINE',
         icon: 'fas fa-car fa-4x',
         className: 'item-circle',
-        link: '#'
+        link: '/kategorija/haljine',
+        image: dress
+
     },
     {
-        name: 'AUTA',
+        name: 'SPORTSKA OPREMA',
         icon: 'fas fa-car fa-4x',
         className: 'item-circle',
-        link: '#'
+        link: '/kategorija/sportska-oprema',
+        image: tennis
     },
     {
-        name: 'AUTA',
+        name: 'NAUTIKA',
         icon: 'fas fa-car fa-4x',
         className: 'item-circle',
-        link: '#'
+        link: '/kategorija/nautika',
+        image: nautical
     }
 
 ]

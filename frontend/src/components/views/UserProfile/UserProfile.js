@@ -16,7 +16,7 @@ const starRating = {
     filledIcon: <i className="fas fa-star"></i>
 };
 
-const UserProfile = () => {
+const Profile = () => {
 
     const [status, setStatus] = useState(true)
 
@@ -119,4 +119,4 @@ const UserProfile = () => {
     );
 };
 
-export default UserProfile;
+export default Profile;
