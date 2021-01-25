@@ -1,6 +1,5 @@
 import React from 'react';
 import Navbar from "./components/Navbar/Navbar";
-import './App.css';
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import HomePage from "./components/views/HomePage/HomePage";
 import Footer from "./components/views/HomePage/Footer/Footer";
@@ -10,7 +9,7 @@ import UserAccount from "./components/views/UserAccount/UserAccount";
 import {UserProvider} from "./state/userState";
 import CategoryResults from "./components/views/CategoryResults/CategoryResults";
 import Profile from "./components/views/UserProfile/UserProfile";
-import StepOne from "./components/views/ProductPublishingProcess/StepOne";
+import ProductPublishingProcess from "./components/views/ProductPublishingProcess/ProductPublishingProcess";
 
 function App() {
 
@@ -28,7 +27,7 @@ function App() {
                 {/*TODO Kako da link ne ostavlja prijašnji path*/}
                 <Route path="/korisnik/:username" component={Profile}/>
                 <Route path="/profil/:username" component={UserAccount}/>
-                <Route path="/kreiranje-proizvoda" component={StepOne}/>
+                <Route path="/kreiranje-proizvoda" component={ProductPublishingProcess}/>
             </div>
             {/*TODO Footer treba da se pokaže na dnu stranice*/}
             {/*<Footer/>*/}
